@@ -1,38 +1,40 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rocket {
+  background: url("img/Rocket.png") center/cover;
+  aspect-ratio: 534/796;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 18.22fr 21.36fr 33.29fr 22.86fr 4.27fr;
+  font-family: Nova Square, sans-serif;
+}
+
+/* .rocket .padding { background-color: red; } */
+.rocket .logo {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+.rocket .countdown {
+  background-color: rgba(0, 128, 0, 0.2);
+  font-size: 4rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rocket .countdown .small {
+  font-size: 0.4em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rocket .options {
+  background-color: rgba(0, 255, 255, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rocket > div:nth-child(5) {
+  background-color: rgba(0, 0, 255, 0.2);
 }
