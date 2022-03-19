@@ -1,0 +1,29 @@
+.red-fill {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(farthest-corner, transparent 30%, red);
+  pointer-events: none;
+  /* animation: showup 1s; */
+  opacity: 0;
+}
+
+@keyframes showup {
+  35%, 65% { opacity: 1; }
+}
+
+.alarm-ring {
+  aspect-ratio: 1;
+  border: 6px double red;
+  border-radius: 50%;
+  width: 0;
+  filter: drop-shadow(1px 0 2px red) drop-shadow(-1px 0 2px red) drop-shadow(0 1px 2px red) drop-shadow(0 -1px 2px red);
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 0.2em);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

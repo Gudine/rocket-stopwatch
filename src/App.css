@@ -1,40 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Nova+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rocket {
-  background: url("img/Rocket.png") center/cover;
-  aspect-ratio: 534/796;
-  width: 500px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 18.22fr 21.36fr 33.29fr 22.86fr 4.27fr;
-  font-family: Nova Square, sans-serif;
+  grid-template-columns: minmax(min-content, 50%) 1fr;
+  justify-items: center;
+  align-items: center;
+  background: url("img/bg.png") center/contain;
+  width: 100%;
 }
 
-/* .rocket .padding { background-color: red; } */
-.rocket .logo {
-  background-color: rgba(255, 255, 0, 0.2);
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
 }
 
-.rocket .countdown {
-  background-color: rgba(0, 128, 0, 0.2);
-  font-size: 4rem;
+.inputs button, .inputs input {
+  font-family: Nova Square, monospace;
+  width: 100%;
+  font-size: 3rem;
+  padding: 30px 50px;
   text-align: center;
 }
 
-.rocket .countdown .small {
-  font-size: 0.4em;
+
+.rocket {
+  background: url("img/Rocket.png") center/cover;
+  aspect-ratio: 750/1000;
+  width: 750px;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: 18.22fr 21.36fr 33.29fr 22.86fr 4.27fr; */
+  grid-template-rows: 18.2fr 16fr 20.9fr 17fr 27.9fr;
+  font-family: Nova Mono, monospace;
 }
 
-.rocket .options {
+.rocket.debug .padding { background-color: red; }
+.rocket.debug .logo { background-color: rgba(255, 255, 0, 0.2); }
+.rocket.debug .countdown { background-color: rgba(0, 128, 0, 0.2); }
+.rocket.debug .options { background-color: rgba(0, 255, 255, 0.2); }
+.rocket.debug > div:nth-child(5) { background-color: rgba(0, 0, 255, 0.2); }
+
+/* .rocket .logo {
+  background-color: rgba(255, 255, 0, 0.2);
+} */
+
+.rocket .countdown {
+  font-size: 4rem;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.rocket .countdown .ms {
+  font-size: 0.6em;
+}
+
+/* .rocket .options {
   background-color: rgba(0, 255, 255, 0.2);
 }
 
 .rocket > div:nth-child(5) {
   background-color: rgba(0, 0, 255, 0.2);
-}
+} */
