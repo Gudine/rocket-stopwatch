@@ -1,7 +1,6 @@
 import React, { Component, createRef } from 'react';
 import './AlarmRing.css';
 import checkpointSnd from '../snd/checkpoint.wav';
-import endSnd from '../snd/end.wav';
 
 class AlarmRing extends Component {
   constructor() {

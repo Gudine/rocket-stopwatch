@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import AlarmRing from './components/AlarmRing';
+import Ending from './components/Ending';
 // import React, { useState, useEffect, useReducer, useCallback } from 'react';
 
 /* References:
@@ -21,6 +22,7 @@ class App extends Component {
       pausedTime: null,
       alarms: Array(10).fill(false),
       checkpoints: [],
+      modalOn: false,
     };
   }
 
@@ -93,6 +95,7 @@ class App extends Component {
         targetTime: new Date(Date.now()),
         alarms: Array(10).fill(false),
         checkpoints: [],
+        modalOn: true,
       });
     }
   };
@@ -125,9 +128,11 @@ class App extends Component {
     }), this.countdownLoop);
   }
 
+  confirmEnding = () => this.setState({ modalOn: false });
+
   render() {
     const {
-      isOn, timeInput, inputHours, inputMins, inputSecs, targetTime, pausedTime, alarms,
+      isOn, timeInput, inputHours, inputMins, inputSecs, targetTime, pausedTime, alarms, modalOn,
     } = this.state;
 
     const time = pausedTime ?? targetTime.getTime() - Date.now();
@@ -140,6 +145,7 @@ class App extends Component {
 
     return (
       <main>
+        { modalOn && <Ending confirmEnding={ this.confirmEnding }/> }
         <div className="rocket">
           <div className="padding" />
           <div className="logo" />

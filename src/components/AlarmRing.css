@@ -6,12 +6,8 @@
   right: 0;
   background: radial-gradient(farthest-corner, transparent 30%, red);
   pointer-events: none;
-  /* animation: showup 1s; */
   opacity: 0;
-}
-
-@keyframes showup {
-  35%, 65% { opacity: 1; }
+  z-index: 2;
 }
 
 .alarm-ring {
